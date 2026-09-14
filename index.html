@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="XIAO XINYANG — digital designer and developer portfolio." />
+    <title>XIAO XINYANG — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Inter:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="refinements.css" />
+  </head>
+  <body>
+    <header class="topbar" aria-label="Primary navigation">
+      <a class="wordmark" href="#top">XY</a>
+      <nav>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#works" data-i18n="navWorks">Work</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="languages" aria-label="Language selection">
+        <button class="active" data-lang="en">EN</button><span>/</span>
+        <button data-lang="ja">JP</button><span>/</span>
+        <button data-lang="zh">中文</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Portfolio introduction">
+        <p class="hero-eyebrow">XIAO XINYANG · DESIGN + CODE</p>
+        <h1>portfolio</h1>
+        <a class="scroll-cue" href="#about"><span data-i18n="scroll">scroll to explore</span><b>↓</b></a>
+      </section>
+
+      <section id="about" class="about section-shell">
+        <div class="section-title-wrap"><p class="section-kicker">01 / <span data-i18n="aboutKicker">GET TO KNOW ME</span></p><h2 data-i18n="aboutTitle">About Me</h2></div>
+        <div class="about-intro">
+          <div class="portrait-stack"><img class="portrait" src="public/images/me.png" alt="XIAO XINYANG portrait" /><img class="gummies" src="public/images/749ec45fdecaedbcc8f5cde0fbc7fff3.jpg" alt="" /></div>
+          <div class="intro-copy">
+            <img src="public/images/starname.png" alt="" class="orbit" />
+            <h3 data-i18n="hello">Hi, I’m XIAO XINYANG</h3>
+            <p class="practice-label">DESIGN + CODE</p>
+            <p data-i18n="intro">I'm Xinyang, a Web Design student based in Tokyo. I design and build digital experiences across UX/UI, frontend development, and data storytelling. I'm especially interested in turning everyday questions and complex information into experiences that feel clear, thoughtful, and human.</p>
+          </div>
+        </div>
+        <div class="resume-grid">
+          <article><h3 data-i18n="education">Education</h3><p data-i18n="educationText">2025 – Present · Tokyo, Japan<br>HAL Tokyo · Web Design<br><br>2018 – 2022 · Wuhan, China<br>Huazhong Agricultural University<br>Resources & Environmental Science</p></article>
+          <article><h3 data-i18n="skills">Skills</h3><p><b data-i18n="design">Design</b><br>UX/UI Design<br>Wireframing<br>Prototyping<br><br><b data-i18n="development">Development</b><br>HTML/CSS · JavaScript<br>React · PHP/Laravel<br><br><b>Data</b><br>D3.js · Data Visualization</p></article>
+          <article class="tools"><h3 data-i18n="tools">Tools</h3><div><img src="public/images/figma.png" alt="Figma" title="Figma" /><img src="public/images/ChatGPT.png" alt="ChatGPT" title="ChatGPT" /><img src="public/images/ps.png" alt="Photoshop" title="Photoshop" /><img src="public/images/Ai.png" alt="Illustrator" title="Illustrator" /></div></article>
+        </div>
+      </section>
+
+      <section id="works" class="works section-shell">
+        <div class="section-title-wrap center"><p class="section-kicker">02 / <span data-i18n="worksKicker">A FEW FAVOURITES</span></p><h2 data-i18n="worksTitle">Selected Works</h2></div>
+        <div class="project project-herown">
+          <div class="project-number">Project 01</div><div class="project-copy"><p class="project-type">UX/UI · WEBSITE</p><h3>HER OWN</h3><p data-i18n="herownText">A digital companion for feeling safer, more capable, and at home on your own.</p><div class="tags"><span>UX/UI</span><span>Website</span></div><a class="enter" href="https://xinyang-xiao.github.io/Herown-casestudy/" target="_blank" rel="noreferrer"><span data-i18n="enter">View Case Study</span> ↗</a></div><div class="device-group herown-devices"><img src="public/images/herownpc.png" alt="Her Own desktop experience" /><img src="public/images/herownphone.png" alt="Her Own mobile experience" /></div>
+        </div>
+        <div class="project project-artory">
+          <div class="project-number">Project 02</div><div class="device-group"><img src="public/images/phoneApp.png" alt="Artory mobile app" /></div><div class="project-copy"><p class="project-type">UX/UI · MOBILE APP</p><h3>ARTORY</h3><p data-i18n="artoryText">Discover. Reflect. Connect. Making exhibition experiences last beyond the moment.</p><div class="tags"><span>UX/UI</span><span>Mobile App</span></div><a class="enter" href="https://xinyang-xiao.github.io/Artory/" target="_blank" rel="noreferrer"><span data-i18n="enter">View Case Study</span> ↗</a></div>
+        </div>
+        <div class="project project-born">
+          <div class="project-number">Project 03</div><div class="project-copy"><p class="project-type">DATA STORYTELLING · WEBSITE</p><h3>BORN OUT OF SYNC</h3><p data-i18n="bornText">An interactive exploration of biological rhythms and social time.</p><div class="tags"><span>Data Storytelling</span><span>Website</span></div><a class="enter" href="https://xinyang-xiao.github.io/born-out-of-sync/" target="_blank" rel="noreferrer"><span data-i18n="enter">View Case Study</span> ↗</a></div><div class="device-group"><img src="public/images/P2time.png" alt="Born Out Of Sync website" /></div>
+        </div>
+      </section>
+
+      <section class="other-works">
+        <div class="section-title-wrap center"><p class="section-kicker">03 / <span data-i18n="otherKicker">MORE TO EXPLORE</span></p><h2 data-i18n="otherTitle">Other Works</h2></div>
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span>my other little worlds</span><b>↔ drag to explore</b></div>
+          <div class="gallery" id="gallery">
+            <a class="gallery-card" href="https://shimmering-meerkat-1723be.netlify.app/" target="_blank" rel="noreferrer"><span class="card-index">01</span><iframe title="Bakery website preview" src="https://shimmering-meerkat-1723be.netlify.app/" loading="lazy" tabindex="-1"></iframe><div><h3 data-i18n="bakeryTitle">Bakery Website</h3><p data-i18n="bakeryText">A visually focused bakery website exploring layout, typography, and color balance. An exercise in making the everyday feel warm and inviting.</p><p class="work-role" data-i18n="bakeryRole">Web design · UI composition</p><em data-i18n="visit">Visit Website ↗</em></div></a>
+            <a class="gallery-card" href="https://xinyang-xiao.github.io/deepshinjuku/" target="_blank" rel="noreferrer"><span class="card-index">02</span><iframe title="Deep Shinjuku preview" src="https://xinyang-xiao.github.io/deepshinjuku/" loading="lazy" tabindex="-1"></iframe><div><h3 data-i18n="deepTitle">Deep Shinjuku</h3><p data-i18n="deepText">A collaborative exploration of Shinjuku through color. I contributed game design, concept development, and the curation of color-based visual assets.</p><p class="work-role" data-i18n="deepRole">Group project · Game & concept design</p><em data-i18n="visit">Visit Website ↗</em></div></a>
+            <a class="gallery-card" href="https://xinyang-xiao.github.io/swimming/" target="_blank" rel="noreferrer"><span class="card-index">03</span><iframe title="Swimming project preview" src="https://xinyang-xiao.github.io/swimming/" loading="lazy" tabindex="-1"></iframe><div><h3 data-i18n="swimmingTitle">Swimming Competition</h3><p data-i18n="swimmingText">A D3.js visualization showing how competition stages narrow the field to a final champion. A concentric-circle layout makes the progression visible.</p><p class="work-role" data-i18n="swimmingRole">Data visualization · D3.js</p><em data-i18n="visit">Visit Website ↗</em></div></a>
+            <a class="gallery-card" href="https://sage-hotteok-113f5c.netlify.app/" target="_blank" rel="noreferrer"><span class="card-index">04</span><iframe title="Coffee site preview" src="https://sage-hotteok-113f5c.netlify.app/" loading="lazy" tabindex="-1"></iframe><div><h3 data-i18n="coffeeTitle">Coffee Website</h3><p data-i18n="coffeeText">A React self-study project adapting an existing café template. An exploration of component structure and frontend workflow through a familiar daily ritual.</p><p class="work-role" data-i18n="coffeeRole">Frontend · React · Template adaptation</p><em data-i18n="visit">Visit Website ↗</em></div></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="contact" class="contact"><p class="section-kicker">04 / <span data-i18n="contactKicker">SAY HELLO</span></p><h2 data-i18n="contactTitle">Contact Me</h2><div class="hello-keys"><img src="public/images/hello.png" width="663" height="164" alt="HELLO keyboard keys"></div><p data-i18n="connect">LET'S CONNECT</p><a class="email" href="mailto:xiaoxy616@gmail.com">xiaoxy616@gmail.com</a><div class="contact-links"><a href="mailto:xiaoxy616@gmail.com">Email ↗</a><a href="https://github.com/xinyang-xiao" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/xinyang-xiao-8b3a513a8/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><small>© 2026 XIAO XINYANG</small></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
