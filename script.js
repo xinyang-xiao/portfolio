@@ -17,6 +17,9 @@ const copy = {
     "worksKicker": "A FEW FAVOURITES",
     "worksTitle": "Selected Works",
     "herownText": "A digital companion for feeling safer, more capable, and at home on your own.",
+    "ecText": "A group project for a jewelry e-commerce website, designed to showcase a curated collection of accessories.",
+    "ecType": "Jewelry E-commerce",
+    "groupWork": "Group Project",
     "artoryText": "Discover. Reflect. Connect. Making exhibition experiences last beyond the moment.",
     "bornText": "An interactive exploration of biological rhythms and social time.",
     "enter": "View Project",
@@ -59,6 +62,9 @@ const copy = {
     "worksKicker": "主な制作実績",
     "worksTitle": "Selected Works",
     "herownText": "一人暮らしの日々を、より安心で、自分らしく過ごすためのデジタルパートナー。",
+    "ecText": "アクセサリーとジュエリーを扱うECサイトのグループ制作プロジェクトです。",
+    "ecType": "ジュエリーECサイト",
+    "groupWork": "グループ制作",
     "artoryText": "発見し、振り返り、つながる。展覧会での体験を、その瞬間の先まで残すアプリ。",
     "bornText": "生体リズムと社会の時間のずれを探る、インタラクティブな作品。",
     "enter": "プロジェクトを見る",
@@ -101,6 +107,9 @@ const copy = {
     "worksKicker": "精选作品",
     "worksTitle": "Selected Works",
     "herownText": "陪伴独居生活的数字伙伴，让一个人的日常更安心、更自在。",
+    "ecText": "与团队成员共同完成的珠宝首饰电商网站项目，展示经过精心挑选的配饰系列。",
+    "ecType": "珠宝电商网站",
+    "groupWork": "小组项目",
     "artoryText": "发现、回顾、连接。让展览的体验和感受延续到离开展厅之后。",
     "bornText": "以交互叙事探索生物节律与社会时间之间的错位。",
     "enter": "查看项目",
@@ -208,3 +217,39 @@ controls.firstElementChild.addEventListener('click',()=>selectCard(active-1));
 controls.lastElementChild.addEventListener('click',()=>selectCard(active+1));
 window.addEventListener('resize',()=>selectCard(active));
 gallery.scrollLeft=0;highlight();switchLanguage(savedLanguage);
+
+// Subtle motion and navigation feedback. Disabled when the visitor prefers less motion.
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+if(!reducedMotion.matches){
+  document.body.classList.add('js-motion');
+  const revealTargets=document.querySelectorAll('.section-title-wrap,.about-intro,.resume-grid,.project,.browser,.contact > *');
+  revealTargets.forEach((element,index)=>{
+    element.classList.add('reveal');
+    element.style.setProperty('--reveal-delay',`${Math.min(index%4,3)*55}ms`);
+  });
+  const revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('is-revealed');revealObserver.unobserve(entry.target);}
+    });
+  },{threshold:.12,rootMargin:'0px 0px -36px'});
+  revealTargets.forEach(element=>revealObserver.observe(element));
+
+  const hero=document.querySelector('.hero');
+  hero.addEventListener('pointermove',event=>{
+    const bounds=hero.getBoundingClientRect();
+    hero.style.setProperty('--pointer-x',`${((event.clientX-bounds.left)/bounds.width-.5)*14}px`);
+    hero.style.setProperty('--pointer-y',`${((event.clientY-bounds.top)/bounds.height-.5)*14}px`);
+  });
+  hero.addEventListener('pointerleave',()=>{hero.style.setProperty('--pointer-x','0px');hero.style.setProperty('--pointer-y','0px');});
+}
+
+const navLinks=[...document.querySelectorAll('.topbar nav a')];
+const navSections=[...document.querySelectorAll('#about,#works,#contact')];
+const navObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      navLinks.forEach(link=>link.classList.toggle('is-current',link.getAttribute('href')===`#${entry.target.id}`));
+    }
+  });
+},{rootMargin:'-30% 0px -55%',threshold:0});
+navSections.forEach(section=>navObserver.observe(section));
